@@ -415,8 +415,7 @@ client.on("messageCreate", async (message) => {
         }
         if (!isAdmin) return;
 
-        const content = message.content.replace(new RegExp(`<@!?${client.user.id}+> ?`), ""); // remove @bot mention
-        if (!content.startsWith('!')) return;
+        if (!message.content.startsWith('!')) return;
         console.log(`${message.author.tag} sent admin command ${content}`);
 
         if (content === "!deploy guild") {
